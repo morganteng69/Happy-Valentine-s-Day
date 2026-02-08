@@ -28,6 +28,12 @@ body {
 
 <body>
 
+<button onclick="loveClick()" id="loveBtn">
+  I love you 💖
+</button>
+
+<p id="response" style="margin-top:15px;"></p>
+
 <div class="card" onclick="playMusic()">
   <h2>💖</h2>
   <p>
@@ -44,7 +50,29 @@ body {
 function playMusic() {
   document.getElementById("music").play();
 }
-</script>
+button {
+  background: #ff5c8a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+<script>
+let count = 0;
 
-</body>
-</html>
+function loveClick() {
+  const msg = document.getElementById("response");
+  const btn = document.getElementById("loveBtn");
+
+  count++;
+
+  if (count === 1) msg.innerText = "I love you more 💕";
+  else if (count === 2) msg.innerText = "Stop. I'm blushing now 😳";
+  else {
+    msg.innerText = "Okay okay, I REALLY love you 🤍";
+    btn.style.display = "none";
+  }
+}
+</script>
