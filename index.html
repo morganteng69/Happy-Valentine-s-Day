@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Valentine</title>
-
-  <style>
-    body {
-      background: #ffe6ee;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      cursor: pointer;
-    }
-
-    .hint {
-      font-size: 14px;
-      color: #777;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Happy Valentine</title>
+<style>
+body{
+  margin:0;
+  background:#ffe6ee;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+}
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+</style>
 </head>
 
 <body>
+<div class="card" onclick="document.getElementById('music').play()">
+  <h1>Happy Valentine 💖</h1>
+  <p>Tap me</p>
+</div>
 
-  <div class="card" onclick="playMusic()">
-    <h1>Happy Valentine 💖</h1>
+<audio id="music" src="song.mp3" loop></audio>
+</body>
+</html>    <h1>Happy Valentine 💖</h1>
     <p>This is just for you.</p>
     <div class="hint">Tap the card</div>
   </div>
