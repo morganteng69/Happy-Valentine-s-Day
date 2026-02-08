@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Happy Valentine</title>
+
   <style>
-      <body>
+    body {
+      background: #ffe6ee;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    .hint {
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
   <div class="card" onclick="playMusic()">
     <h1>Happy Valentine 💖</h1>
-    <p>Click this card</p>
+    <p>This is just for you.</p>
+    <div class="hint">Tap the card</div>
   </div>
 
   <audio id="music" loop>
@@ -15,8 +45,10 @@
 
   <script>
     function playMusic() {
-      const audio = document.getElementById("music");
-      audio.play();
+      const music = document.getElementById("music");
+      music.play();
     }
   </script>
-      </body>
+
+</body>
+</html>
