@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
 
+<style>
+body {
+  margin: 0;
+  background: #ffe6ee;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 35px;
+  width: 320px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" onclick="playMusic()">
+  <h2>💖</h2>
+  <p>
+    Aku ga jago ngomong romantis,<br>
+    tapi aku serius soal kamu.<br><br>
+    Happy Valentine 🤍
+  </p>
+  <small>(tap anywhere)</small>
+</div>
+
+<audio id="music" src="song.mp3" loop></audio>
+
+<script>
+function playMusic() {
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
