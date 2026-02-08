@@ -29,12 +29,19 @@ body {
 
 <body>
 
-<div class="card" onclick="document.getElementById('music').play()">
+<div class="card" onclick="goNext()">
   <h2>Happy Valentine 💖</h2>
-  <p>This is just for you bebee<br><small>Tap the card</small></p>
+  <p>Tap me</p>
 </div>
 
-<audio id="music" src="song.mp3" loop></audio>
+<script>
+function goNext() {
+  window.location.href = "love.html";
+}
+</script>
+
+</body>
+</html><audio id="music" src="song.mp3" loop></audio>
 
 </body>
 </html>  </div>
