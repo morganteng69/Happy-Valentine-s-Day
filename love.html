@@ -24,6 +24,17 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
 button {
   background: #ff5c8a;
   color: white;
@@ -34,7 +45,99 @@ button {
   cursor: pointer;
   margin-top: 15px;
 }
+
+.photo {
+  width: 100%;
+  border-radius: 12px;
+}
 </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- SLIDE 1 -->
+  <div id="slide1" class="slide active">
+    <p>
+      Aku nggak jago ngomong manis,<br>
+      tapi aku serius soal kamu.
+    </p>
+    <button onclick="toSlide2()">Next</button>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div id="slide2" class="slide">
+    <p>
+      Kalau suatu hari semuanya ribet,<br>
+      inget ya — kamu nggak sendirian.
+    </p>
+
+    <button id="loveBtn" onclick="fakeLove(event)">
+      I love you 💖
+    </button>
+
+    <p id="response"></p>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div id="slide3" class="slide">
+    <img src="photo.jpg" class="photo">
+  </div>
+
+</div>
+
+<audio id="music" src="song.mp3" loop preload="auto"></audio>
+
+<script>
+const s1 = document.getElementById("slide1");
+const s2 = document.getElementById("slide2");
+const s3 = document.getElementById("slide3");
+const audio = document.getElementById("music");
+
+let loveCount = 0;
+
+function toSlide2() {
+  s1.classList.remove("active");
+
+  setTimeout(() => {
+    s1.style.display = "none";
+    s2.classList.add("active");
+  }, 1000);
+}
+
+function fakeLove(e) {
+  e.stopPropagation();
+  loveCount++;
+
+  const res = document.getElementById("response");
+  const btn = document.getElementById("loveBtn");
+
+  if (loveCount === 1) {
+    res.innerText = "I love you more 🤍";
+    audio.play();
+  } else if (loveCount === 2) {
+    res.innerText = "Eh jangan kebanyakan, aku malu 😳";
+  } else {
+    res.innerText = "Oke… aku nyerah. Aku sayang kamu.";
+    btn.style.display = "none";
+
+    // pindah ke foto
+    setTimeout(() => {
+      s2.classList.remove("active");
+
+      setTimeout(() => {
+        s2.style.display = "none";
+        s3.classList.add("active");
+      }, 1000);
+
+    }, 2000);
+  }
+}
+</script>
+
+</body>
+</html></style>
 </head>
 
 <body>
