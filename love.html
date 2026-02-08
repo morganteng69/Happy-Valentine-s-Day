@@ -90,6 +90,11 @@ button {
     <img src="photo.jpg" class="photo">
   </div>
 
+  <!-- SLIDE 4 -->
+<div id="slide4" class="slide">
+  <span style="font-size:24px;">🤍</span>
+</div>
+
 </div>
 
 <audio id="music" src="song.mp3" loop preload="auto"></audio>
@@ -139,6 +144,18 @@ function fakeLove(e) {
     }, 2000);
   }
 }
+  btn.style.display = "none";
+  // setelah foto tampil, fade ke blank
+setTimeout(() => {
+  s3.classList.remove("active");
+
+  setTimeout(() => {
+    s3.style.display = "none";
+    document.getElementById("slide4").classList.add("active");
+  }, 1000);
+
+}, 3000);
+  
 </script>
 
 </body>
