@@ -41,9 +41,11 @@ button {
 
 <div class="card" onclick="playMusic()">
   <p>
-    Aku ga pinter ngerangkai kata,<br>
-    tapi aku tulus soal kamu.<br><br>
-    Happy Valentine 🤍
+    Aku gatau masa depan kayak apa,<br>
+    tapi kalo kamu ada di sana,<br><br>
+    aku ga keberatan buat nunggu.
+    Soalnya.. hal baik ga pernah dateng buru buru drey
+    Happy Valentinee bebee 🤍
   </p>
 
   <button id="loveBtn" onclick="loveClick(event)">
@@ -63,7 +65,7 @@ function playMusic() {
 }
 
 function loveClick(e) {
-  e.stopPropagation(); // penting, biar ga bentrok
+  e.stopPropagation();
   clicked++;
 
   const text = document.getElementById("text");
