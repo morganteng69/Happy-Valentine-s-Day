@@ -3,38 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Valentine</title>
+
 <style>
-body{
-  margin:0;
-  background:#ffe6ee;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:Arial;
+body {
+  margin: 0;
+  background: #ffe6ee;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
-.card{
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+.card {
+  background: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
+
 <div class="card" onclick="document.getElementById('music').play()">
-  <h1>Happy Valentine 💖</h1>
-  <p>Tap me</p>
+  <h2>Happy Valentine 💖</h2>
+  <p>This is just for you bebee<br><small>Tap the card</small></p>
 </div>
 
 <audio id="music" src="song.mp3" loop></audio>
+
 </body>
-</html>    <h1>Happy Valentine 💖</h1>
-    <p>This is just for you.</p>
-    <div class="hint">Tap the card</div>
-  </div>
+</html>  </div>
 
   <audio id="music" loop>
     <source src="song.mp3" type="audio/mpeg">
