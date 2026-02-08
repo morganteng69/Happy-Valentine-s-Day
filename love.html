@@ -23,56 +23,62 @@ body {
   text-align: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-</style>
-</head>
 
-<body>
-
-<button onclick="loveClick()" id="loveBtn">
-  I love you 💖
-<button>
-  button {
+button {
   background: #ff5c8a;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
 }
-  <script>
-let count = 0;
+</style>
+</head>
 
-function loveClick() {
-  const msg = document.getElementById("response");
-  const btn = document.getElementById("loveBtn");
-
-  count++;
-
-  if (count === 1) msg.innerText = "I love you more 💕";
-  else if (count === 2) msg.innerText = "Stop. I'm blushing now 😳";
-  else {
-    msg.innerText = "Okay okay, I REALLY love you 🤍";
-    btn.style.display = "none";
-  }
-}
-  </script>
-
-<p id="response" style="margin-top:15px;"></p>
+<body>
 
 <div class="card" onclick="playMusic()">
-  <h2>💖</h2>
   <p>
-    Aku ga jago ngomong romantis,<br>
-    tapi aku serius soal kamu.<br><br>
+    Aku ga pinter ngerangkai kata,<br>
+    tapi aku tulus soal kamu.<br><br>
     Happy Valentine 🤍
   </p>
-  <small>(tap anywhere)</small>
+
+  <button id="loveBtn" onclick="loveClick(event)">
+    I love you 💖
+  </button>
+
+  <p id="text"></p>
 </div>
 
 <audio id="music" src="song.mp3" loop></audio>
 
 <script>
+let clicked = 0;
+
 function playMusic() {
   document.getElementById("music").play();
 }
+
+function loveClick(e) {
+  e.stopPropagation(); // penting, biar ga bentrok
+  clicked++;
+
+  const text = document.getElementById("text");
+  const btn = document.getElementById("loveBtn");
+
+  if (clicked === 1) {
+    text.innerText = "I love you more 💕";
+  } else if (clicked === 2) {
+    text.innerText = "Stop clicking. I'm serious 😳";
+  } else {
+    text.innerText = "Okay… I REALLY love you 🤍";
+    btn.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
