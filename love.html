@@ -103,6 +103,7 @@ button {
 const s1 = document.getElementById("slide1");
 const s2 = document.getElementById("slide2");
 const s3 = document.getElementById("slide3");
+const s4 = document.getElementById("slide4");
 const audio = document.getElementById("music");
 
 let loveCount = 0;
@@ -126,37 +127,35 @@ function fakeLove(e) {
   if (loveCount === 1) {
     res.innerText = "I love you more 🤍";
     audio.play();
-  } else if (loveCount === 2) {
-    res.innerText = "Udah anjay cukup cukup";
-  } else {
-    res.innerText = "Okay... I REALLY LOVE YOU BEBEE";
+  } 
+  else if (loveCount === 2) {
+    res.innerText = "Eh jangan kebanyakan, aku malu 😳";
+  } 
+  else {
+    res.innerText = "Oke… aku nyerah. Aku sayang kamu.";
     btn.style.display = "none";
 
-    // pindah ke foto
+    // ke foto
     setTimeout(() => {
       s2.classList.remove("active");
 
       setTimeout(() => {
         s2.style.display = "none";
         s3.classList.add("active");
-      }, 1000);
 
-    }, 2000);
+        // dari foto ke blank
+        setTimeout(() => {
+          s3.classList.remove("active");
+
+          setTimeout(() => {
+            s3.style.display = "none";
+            s4.classList.add("active");
+          }, 1000);
+
+        }, 3000);
+
+      }, 1000);
+    }, 1500);
   }
 }
-  btn.style.display = "none";
-  // setelah foto tampil, fade ke blank
-setTimeout(() => {
-  s3.classList.remove("active");
-
-  setTimeout(() => {
-    s3.style.display = "none";
-    document.getElementById("slide4").classList.add("active");
-  }, 1000);
-
-}, 3000);
-  
 </script>
-
-</body>
-</html>
